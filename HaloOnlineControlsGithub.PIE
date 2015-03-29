@@ -32,7 +32,7 @@ If (DeadZone(( XInput.RightStickX), Var.DeadzoneAmount) <> 0 or DeadZone(( XInpu
 Delta(Var.DirectInputXInput)  =  DeadZone(( XInput.RightStickX * Var.NormalSpeed), Var.DeadzoneAmount)
 Delta(Var.DirectInputYInput)  =  DeadZone((-XInput.RightStickY * Var.NormalSpeed), Var.DeadzoneAmount)
 }
- 
+//deadzone settings, adjust if needed!
 
 Var.NormalSpeed               =  2000%
 Var.DeadzoneAmount            =  20%
