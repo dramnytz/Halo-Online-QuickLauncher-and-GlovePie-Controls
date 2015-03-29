@@ -1,0 +1,151 @@
+﻿     //MW3 Glovepie By Preemz10314 & Derp250! , Note: You will have to
+                      //adjust your in game controls to match this script if you have to!!
+
+
+                      
+ 
+ 
+        if starting then var.Control = 1
+//Movement - Left Stick
+W = XInput1.Joy1Y > 0.3
+S = XInput1.Joy1Y < -0.3
+A = XInput1.Joy1X < -0.3
+D = XInput1.Joy1X > 0.3
+ 
+ 
+//Aiming - Moving Control - Right Stick -
+Pie.MouseDPI = 4000 //Insert Your Mouse DPI if you know it
+Fakemouse.DirectInputX        =  Var.DirectInputXOutput
+Fakemouse.DirectInputY        =  Var.DirectInputYOutput
+ 
+Mouse.LeftButton              =  XInput.RightTrigger
+Mouse.RightButton             =  XInput.RightThumb
+
+
+Delta(Var.DirectInputXOutput) =  ((Delta(Var.DirectInputXInput)^2 + Delta(Var.DirectInputYInput)^2)^.5)^1.3 * .029 * (Delta(Var.DirectInputXInput))
+Delta(Var.DirectInputYOutput) =  ((Delta(Var.DirectInputXInput)^2 + Delta(Var.DirectInputYInput)^2)^.5)^1.3 * .029 * (Delta(Var.DirectInputYInput))
+
+
+// -------------------------------IF YOU WANT TO CHANGE THE SENSITIVITY ADJUST THE ".029" ABOVE UP OR DOWN SLIGHTLY---------------------------------
+ 
+If (DeadZone(( XInput.RightStickX), Var.DeadzoneAmount) <> 0 or DeadZone(( XInput.RightStickY), Var.DeadzoneAmount) <> 0) {
+Delta(Var.DirectInputXInput)  =  DeadZone(( XInput.RightStickX * Var.NormalSpeed), Var.DeadzoneAmount)
+Delta(Var.DirectInputYInput)  =  DeadZone((-XInput.RightStickY * Var.NormalSpeed), Var.DeadzoneAmount)
+}
+ 
+
+Var.NormalSpeed               =  2000%
+Var.DeadzoneAmount            =  20%
+
+ 
+
+F = XInput1.Up
+I = XInput1.Down
+Three = XInput1.Left
+Control = XInput1.B
+ 
+
+Shift = Xinput1.LeftThumB
+
+
+
+
+
+
+
+var.c1 = XInput1.LeftThumb
+
+if (XInput1.Joy1Y < .1) {
+var.c = false
+}
+
+if pressed (helddown(var.c1, 1  ms) and XInput1.Joy1Y > .1) {
+var.c = true
+}
+
+if var.c = true {
+shift = 1
+} ELSE {
+shift = 0
+}
+
+
+
+
+
+
+Spacebar = XInput1.A
+
+if var.Control = 1 then {
+   Mouse.WheelUp = XInput1.Y
+   wait 40 ms
+
+   }else{
+   Mouse.WheelUp = XInput1.Y
+         }
+
+if var.Control = 1 then {
+  R = XInput1.X
+  wait 30 ms
+
+  }else{
+  E = XInput1.X
+         }
+
+ If pressed(Var.ReloadAndPickUpGun) {
+R = 1
+wait 50 ms
+R = 0
+}
+ 
+
+
+  If Pressed (Helddown(Var.ReloadAndPickUpGun, 119 ms )) {
+R  = 1
+wait 40 ms
+R = 0
+}
+
+  If Pressed (Helddown(Var.ReloadAndPickUpGun, 119 ms )) {
+E  = 1
+wait 30 ms
+E = 0
+}
+
+
+
+
+
+Var.ReloadAndPickUpGun = XInput1.X
+
+
+ 
+
+Var.CrouchAndProneButton = XInput1.B
+ 
+ 
+
+Q = XInput1.RightShoulder
+G = XInput1.LeftShoulder
+ 
+//Trigger RT LT W/ Rumble
+Mouse.LeftButton = XInput1.RightTrigger //Fire Weapon - RT Button
+if XInput1.RightTrigger then
+   if PPJoy1.Digital0 then
+      XInput1.Vibration1 = 0
+   else
+      XInput1.Vibration2 = 0
+   end
+   wait 1 s
+   if PPJoy1.Digital0 then
+      XInput1.Vibration1 = 0
+   else
+      XInput1.Vibration2 = 0
+   end
+end
+ 
+F = XInput1.LeftTrigger
+ 
+//Start & Back Buttons
+Escape = XInput1.Start //Main Menu - Start Button
+H = XInput1.Back //Exit Combat Stance - Back Button
