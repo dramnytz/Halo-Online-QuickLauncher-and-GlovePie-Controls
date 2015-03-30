@@ -1,3 +1,6 @@
+THIS IS FOR THE FREELOADER ONLY, THE GLOVEPIE AND QUICKLAUNCHER SCRIPTS CAN BE COMPLETELY SEPARATE SIMPLY USE GLOVEPIE AND THE .PIE FILE INCLUDED FOR THE 
+CONTROLLER SUPPORT ALONE
+
 The included files will allow you to do two things. One, they will give you an easier way to launch halo online and Two, they will allow you to use an xbox 360 controller 
 to play the game! If you just want the launcher without the controller support then you can edit the .bat file to do this, instructions are in the file.
 
